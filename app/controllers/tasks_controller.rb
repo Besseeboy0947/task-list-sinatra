@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   # GET: /tasks
   get "/tasks" do
+    @user = User.find_by(id: session[:user_id])
     erb :"/tasks/index.html"
   end
 

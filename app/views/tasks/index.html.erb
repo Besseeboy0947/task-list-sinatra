@@ -1,1 +1,37 @@
-<h1>This is the Model's index page.</h1>
+ <!DOCTYPE html>
+<html>
+  <body>
+    <form action="/tasks" method="Post">
+      <input id="submit" type="submit" value="Homepage">
+    </form>
+  </body>
+</html>
+<h1> Homepage </h1>  
+
+<h1> No New Tasks Created. </h1>
+
+
+<br>
+<h3> Hi, <%= @user.first_name %> </h3>
+ </br>
+
+<br>
+ <!DOCTYPE html>
+<html>
+  <body>
+    <form action="/tasks/new" method="Get">
+      <input id="submit" type="submit" value="Create New Task">
+    </form>
+  </body>
+</html>
+</br>
+
+
+ <!DOCTYPE html>
+<html>
+  <body>
+    <form action="/logout" method="Get">
+      <input id="submit" type="submit" value="Logout">
+    </form>
+  </body>
+</html>

@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
 
-  # GET: /users
-  get "/users" do
-    erb :"/users/index.html"
-  end
+  #get '/users/signup' do 
+      #if logged_in? 
+         #redirect "/users/#{current_user.id}"
+      #else
+         #erb :'/users/new'        
+      #end 
+    #end 
 
   # GET: /users/new
    get "/users/new" do  #making a Get request to /user/new. This is a route for the Signup Page
@@ -18,8 +21,8 @@ class UsersController < ApplicationController
 
   # GET: /users/5
   get "/users/:id" do  #Show page Route
-  @user = User.find_by(id: params["id"])  
-  erb :"/users/show.html" 
+  @user = User.find_by(id: params["id"]) 
+  erb :"/tasks/index.html"
   end
 
   # GET: /users/5/edit

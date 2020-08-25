@@ -1,0 +1,81 @@
+[] - User can create, read, update and delete an Task
+
+Interface:
+- User can view Task form 
+- User can submit Task form
+- User can edit Tasks 
+- User can delete Tasks 
+
+User class
+    - attributes => name, password
+    - user signs up/logs in 
+    - has many Tasks 
+
+User controller and views
+    - '/users/signup' => renders sign up form
+    - '/users/signup' => processes sign up form, creates user, post
+    - '/users/login' => renders login form 
+    - '/users/login' => processes login form, post 
+    - need to set sessions
+    - user can view their Tasks, '/users/:id/Tasks'
+
+Tasks class
+    - attributes => address, item, item_price, total
+    - Task belongs to user
+
+Task controller and views
+    - '/Tasks/new => renders new Task form
+    - '/Tasks' => submits Task 
+    - '/Tasks' => renders all Tasks
+    - '/Tasks/:id => renders one instance
+    - '/Tasks/:id/edit => renders update form for an instance
+    - '/Tasks/:id => updates instance
+    - '/Tasks/:id:/delete' => deletes instance
+
+   
+   
+    - users controller 
+	- Tasks controller 
+
+
+
+Sessions:
+
+1. enable sessions
+2. utilize sessions hash in the methods that persist user data into application
+
+
+
+authentication:
+1. bcrypt gem 
+2. user model, has_secure_password 
+3. change our users table, password => password_digest
+
+
+user is logged in?
+- redirect to homepage, if logged in
+- cant see the signup or login form if logged in 
+
+helper methods
+
+- application controller => methods available to controllers
+- app/helpers => helper methods used in your views
+
+
+where to start?
+
+
+x set up classes
+x set up my database 
+- users controller 
+- Tasks controller 
+
+- add Task
+- delete Task
+-importance of Task
+-who the tasks belows too
+- extra post task 
+
+build forms for task.new 
+build user .arrya to learn how to code 
+user.code controller 

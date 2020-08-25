@@ -1,1 +1,38 @@
+ <!DOCTYPE html>
+<html>
+  <body>
+    <form action="/tasks" method="Post">
+      <input id="submit" type="submit" value="Homepage">
+    </form>
+  </body>
+</html>
+
 <h1>Insert the form to create a new instance of your model.</h1>
+
+
+<form method='POST' action='/tasks'> 
+  <br>
+  <label for="task">Task</label>
+  <input type="text" name="task">
+  </br>
+
+  <br>
+  <label for="description">Description</label>
+  <textarea name="description"></textarea>
+  </br>
+  
+  <br>
+  <label for="created_at">Entry Date</label>
+  <textarea name="created_at"></textarea>
+  </br>
+   
+  <br>
+  <label for="updated_at">Date completed</label>
+  <textarea name="updated_at"></textarea>
+  </br>
+  
+  <br>
+  <input type="submit" value="Submit">
+  </br>
+
+</form>

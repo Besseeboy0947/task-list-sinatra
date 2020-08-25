@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Rye&display=swap');
 @media screen {
   /* --- Reset Styles --- */
   * {
@@ -42,7 +43,9 @@
     margin-bottom: 16px;
   }
 
-  h3 {
+  h3 { 
+    font-family: 'Rye', cursive;
+    color: red; 
     font-size: 18px;
     line-height: 36px;
   }
