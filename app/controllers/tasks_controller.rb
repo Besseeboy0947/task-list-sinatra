@@ -11,8 +11,20 @@ class TasksController < ApplicationController
     erb :"/tasks/new.html"
   end
 
+# post "/tasks/:id" do  
+#     @task = Task.find_by_id(params[:id])
+#     redirect to "/tasks"
+#   end
+# delete "/tasks/:id" do
+#     binding.pry
+#     # @task.delete
+#     # redirect "/tasks"
+#   end
+
   # POST: /tasks
   post "/tasks" do
+    @task = Task.new(name: params[:task], description: params[:description], user_id: current_user.id  )
+    @task.save
     redirect "/tasks"
   end
 
@@ -32,7 +44,7 @@ class TasksController < ApplicationController
   end
 
   # DELETE: /tasks/5/delete
-  delete "/tasks/:id/delete" do
-    redirect "/tasks"
-  end
+  
 end
+#patch to update your edit form task/edit 
+

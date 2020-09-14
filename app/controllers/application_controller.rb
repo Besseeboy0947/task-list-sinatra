@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "welcome back"
     set :public_folder, 'public'
     set :views, 'app/views'
+    register Sinatra::Flash
   end
 # if logged_in?
 #redirect "/users/#{session[:user_id]}"
@@ -32,9 +33,6 @@ class ApplicationController < Sinatra::Base
   end
 
 
- get "/" do
-    erb :welcome
-  end
   
  get "/signup" do
     erb :welcome
@@ -43,26 +41,28 @@ class ApplicationController < Sinatra::Base
  get "/login" do
    erb :login
  end
-  
  
+#patch
+
  post "/login" do
   @user =  User.find_by(email: params[:email])
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id   
     redirect "/tasks"
   else 
+   flash[:message] = "The username or password you entered is incorrect.?"
     redirect "/login"
   end 
 end
-
-
-post '/login' do
-  @sessions = session
-   item = params["item"]
-  @sessions[:item] = item
-end
-
  
+delete "/tasks/:id" do
+  @task= Task.find_by(id: params[:id])
+    @task.delete
+    redirect "/tasks"
+  end
+
+
+
  get "/logout" do #have yet to see a logout indication
   session.clear
   redirect "/" 
