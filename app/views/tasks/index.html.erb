@@ -9,13 +9,11 @@
 <h1> Welcome to your task manager </h1>  
 <br>
 <h3> Hi, <%= @user.first_name %> </h3>
-  
-
 
 <% if @user.tasks.length>0 %> 
      <% @user.tasks.each do |task|  %>
-Task by:
-        <%= task.user.first_name %>
+<a class="button" href="/users">Task by:</a>
+        <%= @user.first_name %>
   </br>
 Task Name:
          <%= task.name %>
@@ -23,10 +21,13 @@ Task Name:
 Task Description:
         <%= task.description %>
   <br>
-<form action= "/tasks/<%=task.id%>" method="Post">
-      <input type="hidden" id="hidden" name="_method" value="delete">
-      <input type="submit" value="delete">
-</form>
+<form action= "/tasks/<%=task.id%>" method="Post">  
+ <input type="hidden" id="hidden" name="_method" value="delete">      
+  <input type="submit" value="delete">  
+</form>   
+
+<a class="button" href="/tasks/<%=task.id%>/edit">edit</a>
+<br>
   </br>
 
   <% end %> 

@@ -41,7 +41,12 @@ class ApplicationController < Sinatra::Base
  get "/login" do
    erb :login
  end
- 
+  
+delete "/tasks/:id" do
+  @task= Task.find_by(id: params[:id])
+    @task.delete
+    redirect "/tasks"
+  end
 #patch
 
  post "/login" do
@@ -54,14 +59,6 @@ class ApplicationController < Sinatra::Base
     redirect "/login"
   end 
 end
- 
-delete "/tasks/:id" do
-  @task= Task.find_by(id: params[:id])
-    @task.delete
-    redirect "/tasks"
-  end
-
-
 
  get "/logout" do #have yet to see a logout indication
   session.clear

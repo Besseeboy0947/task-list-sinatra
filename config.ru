@@ -7,5 +7,4 @@ end
 use UsersController
 use TasksController
 use Rack::MethodOverride
-run ApplicationController
-#mount controller = use /run/ etc.. 
+run ApplicationController 

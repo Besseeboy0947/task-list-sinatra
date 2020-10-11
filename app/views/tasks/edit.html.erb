@@ -1,1 +1,45 @@
 <h1>Insert the form to edit an instance of your model here.</h1>
+
+
+
+
+
+
+
+<html>
+  <body>
+    <form action="/tasks" method="post">
+      <input id="submit" type="submit" value="Homepage">
+    </form>
+  </body>
+</html>
+<h1>Create a Task for your post</h1>
+
+<form action= "/tasks/<%=@task.id%>" method="post">  
+<input type="hidden" id="hidden" name="_method" value="patch"> 
+  <br>
+  <label for="task">Task</label>
+  <input type="text" name="task" value = "<%=@task.name%>"> 
+  </br>
+
+  <br>
+  <label for="description">Description</label>
+  <input type="text" name="description" value = "<%=@task.description%>">
+  </br>
+  
+  <br>
+  <label for="created_at">Entry Date</label>
+   <input type="text" name="created_at" value = "<%=@task.created_at%>">
+  </br>
+   
+  <br>
+  <label for="updated_at">Date completed</label>
+  <input type="text" name="updated_at" value = "<%=@task.updated_at%>">
+  <label for="updated_at">(if not Applicable) *put N/A</label>
+  </br>
+  
+  <br>
+  <input type="submit" value="Submit">
+  </br>
+
+</form>
