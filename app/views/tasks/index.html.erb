@@ -1,22 +1,21 @@
  <!DOCTYPE html>
 <html>
   <body>
-    <form action="/tasks" method="Post">
-      <input id="submit" type="submit" value="Homepage">
-    </form>
+  <a class="button" href="/tasks">Homepage:</a>  
   </body>
 </html>
 <h1> Welcome to your task manager </h1>  
 <br>
 <h3> Hi, <%= @user.first_name %> </h3>
 
-<% if @user.tasks.length>0 %> 
-     <% @user.tasks.each do |task|  %>
+
+ <% if @user.tasks.length>0 %>
+     <% @user.tasks.each.with_index(1) do |task,index|%> 
 <a class="button" href="/users">Task by:</a>
         <%= @user.first_name %>
   </br>
-Task Name:
-         <%= task.name %>
+<%=index%> <a class="button" href="/tasks/<%=task.id%>"><%=task.name%> </a> 
+
    </br>
 Task Description:
         <%= task.description %>

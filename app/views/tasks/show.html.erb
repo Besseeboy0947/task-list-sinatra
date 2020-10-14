@@ -1,7 +1,17 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>ALL YOUR POSTS!</h1>
+<h2>its your task show</h2>
 
-<h3>Your post</h3><br>
-<strong>Topic:</strong> 
-<%=@post.topic%><br>
-<strong>Post:</strong> 
-<%=@post.content%><br>
+User Number: <%= @user.id %>
+</br>
+ <br>
+User Name: <%= @user.first_name %>
+<% @user.tasks.each do |task|%> 
+  </br>
+Task Name:
+         <%= task.name %>
+   </br>
+Task Description:
+        <%= task.description %>
+  <br>
+<%end%>
+ 

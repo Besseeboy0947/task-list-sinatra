@@ -14,7 +14,8 @@ class UsersController < ApplicationController
  
   get "/users" do  
     @user = User.find_by(id: session[:user_id])
-    erb :"/users/show.html"
+    erb :"/Users/index.html"
+    erb :"/tasks/show.html"
   end
     
 
@@ -32,7 +33,8 @@ class UsersController < ApplicationController
   # GET: /users/5
   get "/users/:id" do  #Show page Route
    @user = User.find_by(id: params["id"]) 
-  erb :"/tasks/index.html"
+  # erb :"/tasks/index.html"
+  erb :"/users/show.html"
   end
 
   # GET: /users/5/edit
