@@ -1,11 +1,16 @@
 <h1>ALL YOUR POSTS!</h1>
-<h2>its your task show</h2>
+<a class="button" href="/tasks">Homepage:</a> 
+</br>
+<h2>THIS IS your Task Show Page </h2>
 
+User Name: <%= @user.first_name %>
+</br>
 User Number: <%= @user.id %>
 </br>
  <br>
 User Name: <%= @user.first_name %>
-<% @user.tasks.each do |task|%> 
+<% @user.tasks.each do |task|%>
+
   </br>
 Task Name:
          <%= task.name %>
@@ -13,5 +18,16 @@ Task Name:
 Task Description:
         <%= task.description %>
   <br>
+Task created_at:
+        <%= task.created_at %>
+  </br>
+Task updated_at:
+      <%= task.updated_at %>
+  </br>
+
+
 <%end%>
- 
+
+
+
+

@@ -14,7 +14,7 @@ class UsersController < ApplicationController
  
   get "/users" do  
     @user = User.find_by(id: session[:user_id])
-    erb :"/Users/index.html"
+    # erb :"/users/index.html"
     erb :"/tasks/show.html"
   end
     
