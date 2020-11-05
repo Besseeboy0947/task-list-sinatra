@@ -29,6 +29,7 @@ class TasksController < ApplicationController
   
   # GET: /tasks/5
   get "/tasks/:id" do
+  @user = current_user
     erb :"/tasks/show.html"
   end
 
@@ -38,11 +39,12 @@ class TasksController < ApplicationController
     erb :"/tasks/edit.html"
   end
 
-  # PATCH: /tasks/5
-  patch "/tasks/:id" do
-  @task= Task.find_by(id: params[:id])
-    # redirect "/tasks/:id"
-  end
+  
+  patch "/tasks/:id" do  
+  @task = Task.find_by(id: params[:id])
+  @task.update(description: params[:description], name: params[:task])
+  redirect "/tasks/#{@task.id}"
+end
  
  
   delete "/tasks/:id" do
